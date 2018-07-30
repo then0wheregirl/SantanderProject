@@ -14,8 +14,8 @@ import com.then0wheregirl.santanderproject.utils.PageAnimation;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonContact;
-    private Button buttonInvest;
+    private Button barContact;
+    private Button barInvest;
 
     private FragmentManager fragMngr;
 
@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       buttonContact = findViewById(R.id.bttn_Contact);
-       buttonInvest = findViewById(R.id.bttn_Invest);
+       barContact = findViewById(R.id.bar_Contact);
+       barInvest = findViewById(R.id.bar_Invest);
 
        fragMngr = getSupportFragmentManager();
 
@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
        switchFrag(investFrag,null);  //reference it
 
-        buttonInvest.setOnClickListener(new View.OnClickListener(){
+        barInvest.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
                 switchFrag(investFrag, PageAnimation.SLIDE_LEFT_TO_RIGHT);
 
             }
         });
-        buttonContact.setOnClickListener(new View.OnClickListener(){
+        barContact.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
                 switchFrag(contactFrag, PageAnimation.SLIDE_RIGHT_TO_LEFT);
             }
