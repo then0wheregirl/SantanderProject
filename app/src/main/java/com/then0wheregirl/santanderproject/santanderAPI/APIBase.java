@@ -4,6 +4,7 @@ import com.then0wheregirl.santanderproject.utils.Path;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
 public interface APIBase {
 
     Retrofit retrofit = new Retrofit.Builder()
