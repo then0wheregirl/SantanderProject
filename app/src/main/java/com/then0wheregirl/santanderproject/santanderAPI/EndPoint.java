@@ -1,7 +1,6 @@
 package com.then0wheregirl.santanderproject.santanderAPI;
 
-import com.then0wheregirl.santanderproject.model.cells.CellsDataModel;
-import com.then0wheregirl.santanderproject.model.fund.FundDataModel;
+import com.then0wheregirl.santanderproject.model.fund.Fund;
 import com.then0wheregirl.santanderproject.utils.Path;
 
 import java.util.List;
@@ -13,9 +12,9 @@ public interface EndPoint {
 
 
     @GET(Path.URL_INVESTRoute)
-    Call<List<FundDataModel>> getmodel();
+    Call<Fund> getFund();
 
     @GET(Path.URL_CONTACTRoute)
-    Call<List<CellsDataModel>> getmodel();
+    Call<List<CellsJson>> getCells();
 
 }

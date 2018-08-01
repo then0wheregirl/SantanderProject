@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/fund"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Fundo"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/cdi"
+        app:layout_constraintHorizontal_bias="0.650"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_title" />
+
+    <TextView
+        android:id="@+id/cdi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="CDI"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/fund"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.850"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_title" />
+
+    <TextView
+        android:id="@+id/month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:text="No mês"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/tax_1"
+        app:layout_constraintHorizontal_bias="0.200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cdi" />
+
+    <TextView
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:text="No Ano"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/tax_3"
+        app:layout_constraintHorizontal_bias="0.200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/month" />
+
+    <TextView
+        android:id="@+id/tmonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:text="12 meses"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/tax_5"
+        app:layout_constraintHorizontal_bias="0.200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/year" />
+
+    <TextView
+        android:id="@+id/tax_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:text="0,3%"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/month"
+        app:layout_constraintStart_toEndOf="@+id/month"
+        app:layout_constraintTop_toBottomOf="@+id/fund" />
+
+
+    <TextView
+        android:id="@+id/tax_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="8dp"
+        android:text="0,3%"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/month"
+        app:layout_constraintStart_toEndOf="@+id/tax_1"
+        app:layout_constraintTop_toBottomOf="@+id/cdi" />
+
+    <TextView
+        android:id="@+id/tax_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:text="13,01%"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/year"
+        app:layout_constraintStart_toEndOf="@+id/year"
+        app:layout_constraintTop_toBottomOf="@+id/tax_1" />
+
+    <TextView
+        android:id="@+id/tax_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="8dp"
+        android:text="12,08%"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/year"
+        app:layout_constraintStart_toEndOf="@+id/tax_3"
+        app:layout_constraintTop_toBottomOf="@+id/tax_2" />
+
+    <TextView
+        android:id="@+id/tax_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="8dp"
+        android:text="17,9%"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tmonth"
+        app:layout_constraintStart_toEndOf="@+id/tmonth"
+        app:layout_constraintTop_toBottomOf="@+id/tax_3" />
+
+    <TextView
+        android:id="@+id/tax_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:text="17,6%"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tmonth"
+        app:layout_constraintStart_toEndOf="@+id/tax_5"
+        app:layout_constraintTop_toBottomOf="@+id/tax_4" />
+
+    <View
+        android:id="@+id/image_image"
+        android:layout_width="315dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/separador"
+        android:backgroundTint="@color/colorSecondSeparador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tax_6" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/info_recycler_view"
+        android:layout_width="368dp"
+        android:layout_height="184dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_image" />
+
+
+
+
+</ScrollView>
