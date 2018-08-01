@@ -5,12 +5,20 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.then0wheregirl.santanderproject.adapter.SantanderAdapter;
 import com.then0wheregirl.santanderproject.fragments.ContactFragment;
 import com.then0wheregirl.santanderproject.fragments.InvestimentFragment;
+import com.then0wheregirl.santanderproject.model.fund.Info;
 import com.then0wheregirl.santanderproject.utils.PageAnimation;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
     private InvestimentFragment investFrag;
     private ContactFragment contactFrag;
+
+    RecyclerView mRecyclerView;
+    private SantanderAdapter santanderAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
        investFrag = new InvestimentFragment();
        contactFrag = new ContactFragment();
 
+       mRecyclerView = findViewById(R.id.invest_list);
+       setupRecycler();
+
        switchFrag(investFrag,null);  //reference it
 
         barInvest.setOnClickListener(new View.OnClickListener(){
@@ -48,6 +62,24 @@ public class MainActivity extends AppCompatActivity {
                 switchFrag(contactFrag, PageAnimation.SLIDE_RIGHT_TO_LEFT);
             }
         });
+    }
+
+    private List<Info> getInfo() {
+        List<Info> info = new ArrayList<>();
+        //info.add
+        return info;
+    }
+
+        private void setupRecycler() {
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(layoutManager);
+
+
+        santanderAdapter = new SantanderAdapter(getItems());
+        mRecyclerView.setAdapter(santanderAdapter);
+        mRecyclerView.addItemDecoration(
+                new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     private void switchFrag(Fragment fragment, PageAnimation pageAnimation) {

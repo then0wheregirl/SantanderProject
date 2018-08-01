@@ -1,5 +1,6 @@
 package com.then0wheregirl.santanderproject.santanderAPI;
 
+import com.then0wheregirl.santanderproject.model.cells.Cell;
 import com.then0wheregirl.santanderproject.model.fund.Fund;
 import com.then0wheregirl.santanderproject.utils.Path;
 
@@ -15,6 +16,6 @@ public interface EndPoint {
     Call<Fund> getFund();
 
     @GET(Path.URL_CONTACTRoute)
-    Call<List<CellsJson>> getCells();
+    Call<List<Cell>> getCell();
 
 }

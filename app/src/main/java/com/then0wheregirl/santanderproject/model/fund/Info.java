@@ -14,7 +14,7 @@ public class Info {
         this.name = name;
     }
 
-
+    Info(){}
 
     public String data;
 
