@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.then0wheregirl.santanderproject.R;
+
 import com.then0wheregirl.santanderproject.model.fund.Info;
 
 import java.util.List;
@@ -21,7 +23,7 @@ public class SantanderAdapter extends RecyclerView.Adapter<SantanderViewHolder> 
     @Override
     public SantanderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
         return new SantanderViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.invest_list, parent, false));
+                .inflate(R.layout.info_list, parent, false));
     }
 
     @Override
@@ -29,7 +31,7 @@ public class SantanderAdapter extends RecyclerView.Adapter<SantanderViewHolder> 
         Info info = info.get(position);
 
         holder.name.setText(info.getName());
-        holder.data.setText(info.getName());
+        holder.data.setText(info.getData());
     }
 
     @Override

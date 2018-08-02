@@ -10,15 +10,26 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.then0wheregirl.santanderproject.adapter.SantanderAdapter;
+import com.then0wheregirl.santanderproject.adapter.SantanderViewHolder;
 import com.then0wheregirl.santanderproject.fragments.ContactFragment;
 import com.then0wheregirl.santanderproject.fragments.InvestimentFragment;
+import com.then0wheregirl.santanderproject.model.fund.Fund;
 import com.then0wheregirl.santanderproject.model.fund.Info;
+import com.then0wheregirl.santanderproject.santanderAPI.APIBase;
+import com.then0wheregirl.santanderproject.santanderAPI.EndPoint;
 import com.then0wheregirl.santanderproject.utils.PageAnimation;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView infoRecyclerView;
     private SantanderAdapter santanderAdapter;
 
+
+    //SWITCH THIS DO VIEW HOLDER PROPRIETIES LATER
+    private TextView name, whatIs, fundName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
 
        investFrag = new InvestimentFragment();
        contactFrag = new ContactFragment();
+
+       //SWITCH THIS DO VIEW HOLDER PROPRIETIES LATER
+        name = findViewById(R.id.name);
+        whatIs = findViewById(R.id.whatIs);
+        fundName = findViewById(R.id.fundName);
+
+
+       getGeneralContent();
 
        infoRecyclerView = findViewById(R.id.rc_info);
        setupRecycler();
@@ -60,6 +83,31 @@ public class MainActivity extends AppCompatActivity {
         barContact.setOnClickListener(new View.OnClickListener(){
             public void onClick (View view){
                 switchFrag(contactFrag, PageAnimation.SLIDE_RIGHT_TO_LEFT);
+            }
+        });
+    }
+
+    private void getGeneralContent(){
+        EndPoint endPoint = APIBase.retrofit.create(EndPoint.class);
+
+        final Call<Fund> fund = endPoint.getFund();
+
+        fund.enqueue(new Callback<Fund>() {
+            @Override
+            public void onResponse(Call<Fund> call, Response<Fund> response) {
+                Fund fundReturnContect = response.body();
+
+
+                //SWITCH THIS DO VIEW HOLDER PROPRIETIES LATER
+                name.setText(fundReturnContect.getScreen().getTitle());
+                whatIs.setText(fundReturnContect.getScreen().getTitle());
+                fundName.setText(fundReturnContect.getScreen().getTitle());
+
+            }
+
+            @Override
+            public void onFailure(Call<Fund> call, Throwable t) {
+
             }
         });
     }
