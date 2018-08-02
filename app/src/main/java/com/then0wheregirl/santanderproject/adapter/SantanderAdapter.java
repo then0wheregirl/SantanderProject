@@ -13,10 +13,10 @@ import java.util.List;
 
 public class SantanderAdapter extends RecyclerView.Adapter<SantanderViewHolder> {
 
-    private List<Info> info;
+    private List<Info> infos;
 
-    public SantanderAdapter (List<Info> info){
-        this.info = info;
+    public SantanderAdapter (List<Info> infos){
+        this.infos = infos;
     }
 
     @NonNull
@@ -26,9 +26,10 @@ public class SantanderAdapter extends RecyclerView.Adapter<SantanderViewHolder> 
                 .inflate(R.layout.info_list, parent, false));
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull SantanderViewHolder holder, final int position){
-        Info info = info.get(position);
+
+   @Override
+   public void onBindViewHolder(@NonNull SantanderViewHolder holder, final int position){
+        Info info = infos.get(position);
 
         holder.name.setText(info.getName());
         holder.data.setText(info.getData());
@@ -36,7 +37,7 @@ public class SantanderAdapter extends RecyclerView.Adapter<SantanderViewHolder> 
 
     @Override
     public int getItemCount(){
-        return info != null ? info.size() : 0;
+        return infos != null ? infos.size() : 0;
     }
 
 }
