@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:stretchColumns="*"
     android:shrinkColumns="*"
-    android:layout_margin="20dp">
+    android:layout_margin="30dp">
     <TableRow>
         <TextView android:id="@+id/fund_title"
             android:text="Fundo"
@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/category"
-            android:layout_width="180dp"
+            android:layout_width="170dp"
             android:text="month" />
         <TextView android:id="@+id/fund"
             android:text="value" />

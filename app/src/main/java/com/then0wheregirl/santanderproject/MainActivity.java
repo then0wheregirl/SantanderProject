@@ -113,9 +113,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<Info> getInfo() {
-        List<Info> info = new ArrayList<>();
-        //info.add
-        return info;
+        List<Info> infos = new ArrayList<>();
+        //infos.add(new Info());
+        return infos;
     }
 
         private void setupRecycler() {
