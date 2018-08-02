@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private InvestimentFragment investFrag;
     private ContactFragment contactFrag;
 
-    RecyclerView mRecyclerView;
+    RecyclerView infoRecyclerView;
     private SantanderAdapter santanderAdapter;
 
     @Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
        investFrag = new InvestimentFragment();
        contactFrag = new ContactFragment();
 
-       mRecyclerView = findViewById(R.id.invest_list);
+       infoRecyclerView = findViewById(R.id.rc_info);
        setupRecycler();
 
        switchFrag(investFrag,null);  //reference it
@@ -73,12 +73,12 @@ public class MainActivity extends AppCompatActivity {
         private void setupRecycler() {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(layoutManager);
+        infoRecyclerView.setLayoutManager(layoutManager);
 
 
-        santanderAdapter = new SantanderAdapter(getItems());
-        mRecyclerView.setAdapter(santanderAdapter);
-        mRecyclerView.addItemDecoration(
+        santanderAdapter = new SantanderAdapter(getInfo());
+        infoRecyclerView.setAdapter(santanderAdapter);
+        infoRecyclerView.addItemDecoration(
                 new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 

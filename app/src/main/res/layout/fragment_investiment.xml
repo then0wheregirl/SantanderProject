@@ -184,7 +184,7 @@
             tools:listitem="@layout/moreinfo_list" />
 
           <android.support.v7.widget.RecyclerView
-              android:id="@+id/rc_list"
+              android:id="@+id/rc_info"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               tools:listitem="@layout/info_list" />
