@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.InvestimentFragment">
+
     <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragments.InvestimentFragment">
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="150dp"
+                android:text="Investimento"
+                android:layout_marginLeft="150dp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="95dp"
+                android:background="@drawable/toolbar_icon"
+                android:layout_marginLeft="90dp" />
+
+        </android.support.v7.widget.Toolbar>
 
         <LinearLayout
             android:id="@+id/ll_InvestFund"
@@ -21,6 +44,7 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="72dp">
+
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
@@ -41,172 +65,172 @@
                 android:layout_height="1dp"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
-                android:background="@color/colorGrey"/>
+                android:background="@color/colorGrey" />
 
         </LinearLayout>
 
         <!-- Transformar em fragmento dinamico. -->
 
-    <LinearLayout
-        android:id="@+id/ll_InvestResume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="2dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_InvestFund">
-
-        <TextView
-            android:id="@+id/whatIs"
+        <LinearLayout
+            android:id="@+id/ll_InvestResume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="O que é?"/>
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_InvestFund">
 
-        <TextView
-            android:id="@+id/definition"
+            <TextView
+                android:id="@+id/whatIs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="O que é?" />
+
+            <TextView
+                android:id="@+id/definition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="25dp"
+                android:text=" O fundo tem por objetivo proporcionar aos seus cotistas rentabilidade a longo prazo atraves de investimentos. "
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_InvestmentRisk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="25dp"
-            android:textAlignment="center"
-            android:text=" O fundo tem por objetivo proporcionar aos seus cotistas rentabilidade a longo prazo atraves de investimentos. " />
-    </LinearLayout>
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_InvestResume"
+            tools:ignore="MissingConstraints">
 
-    <RelativeLayout
-        android:id="@+id/rl_InvestmentRisk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_InvestResume"
-        tools:ignore="MissingConstraints">
+            <TextView
+                android:id="@+id/riskTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grau de risco de investimeto" />
 
-        <TextView
-            android:id="@+id/riskTitle"
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_RiskMeasure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grau de risco de investimeto" />
+            android:layout_marginTop="30dp"
 
-    </RelativeLayout>
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_InvestmentRisk">
 
-    <LinearLayout
-        android:id="@+id/ll_RiskMeasure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+            <View
+                android:id="@+id/v_ir_1"
+                android:layout_width="55dp"
+                android:layout_height="8dp"
+                android:layout_margin="0.5dp"
+                android:background="@color/colorGreenLight"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rl_InvestmentRisk"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5">
+            <View
+                android:id="@+id/v_ir_2"
+                android:layout_width="55dp"
+                android:layout_height="8dp"
+                android:layout_margin="0.5dp"
+                android:background="@color/colorGreenDark"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <View
-            android:id="@+id/v_ir_1"
-            android:layout_width="55dp"
-            android:layout_height="8dp"
-            android:background="@color/colorGreenLight"
-            android:layout_margin="0.5dp"
-            app:layout_constraintStart_toStartOf="parent" />
+            <View
+                android:id="@+id/v_ir_3"
+                android:layout_width="55dp"
+                android:layout_height="8dp"
+                android:layout_margin="0.5dp"
+                android:background="@color/colorYellow"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <View
-            android:id="@+id/v_ir_2"
-            android:layout_width="55dp"
-            android:layout_height="8dp"
-            android:background="@color/colorGreenDark"
-            android:layout_margin="0.5dp"
-            app:layout_constraintStart_toStartOf="parent" />
+            <View
+                android:id="@+id/v_ir_4"
+                android:layout_width="55dp"
+                android:layout_height="8dp"
+                android:layout_margin="0.5dp"
+                android:background="@color/colorOrange"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <View
-            android:id="@+id/v_ir_3"
-            android:layout_width="55dp"
-            android:layout_height="8dp"
-            android:background="@color/colorYellow"
-            android:layout_margin="0.5dp"
-            app:layout_constraintStart_toStartOf="parent" />
+            <View
+                android:id="@+id/v_ir_5"
+                android:layout_width="55dp"
+                android:layout_height="8dp"
+                android:layout_margin="0.5dp"
+                android:background="@color/colorRed"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <View
-            android:id="@+id/v_ir_4"
-            android:layout_width="55dp"
-            android:layout_height="8dp"
-            android:background="@color/colorOrange"
-            android:layout_margin="0.5dp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <View
-            android:id="@+id/v_ir_5"
-            android:layout_width="55dp"
-            android:layout_height="8dp"
-            android:background="@color/colorRed"
-            android:layout_margin="0.5dp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </LinearLayout>
+        </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/ll_InvestData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="45dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_RiskMeasure">
+        <Button
+            android:id="@+id/bttn_Invest"
+            android:layout_width="345dp"
+            android:layout_height="51dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="50dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/roundedbttn"
+            android:text="Investir"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_InvestData" />
 
-        <TextView
-            android:id="@+id/infoTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Mais informações sobre o investimento"/>
+        <LinearLayout
+            android:id="@+id/ll_InvestData"
+            android:layout_width="368dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_RiskMeasure">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rc_moreinfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/moreinfo_list" />
+            <TextView
+                android:id="@+id/infoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Mais informações sobre o investimento" />
 
-          <android.support.v7.widget.RecyclerView
-              android:id="@+id/rc_info"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              tools:listitem="@layout/info_list" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/info_list" />
 
-      </LinearLayout>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
 
 
-      <Button
-          android:id="@+id/bttn_Invest"
-          android:layout_width="345dp"
-          android:layout_height="51dp"
-          android:layout_marginBottom="8dp"
-          android:layout_marginEnd="8dp"
-          android:layout_marginLeft="8dp"
-          android:layout_marginRight="8dp"
-          android:layout_marginStart="8dp"
-          android:background="@drawable/roundedbttn"
-          android:text="Investir"
-          android:textColor="@color/colorAccent"
-          android:textAllCaps="false"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent" />
-
-  </android.support.constraint.ConstraintLayout>
-
+</ScrollView>

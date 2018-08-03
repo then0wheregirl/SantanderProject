@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Info> getInfo() {
         List<Info> infos = new ArrayList<>();
-        //infos.add(new Info());
+        infos.add(new Info());
         return infos;
     }
 
