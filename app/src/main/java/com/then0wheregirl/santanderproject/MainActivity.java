@@ -42,11 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private ContactFragment contactFrag;
 
     RecyclerView infoRecyclerView;
-    private SantanderAdapter santanderAdapter;
 
-
-    //SWITCH THIS DO VIEW HOLDER PROPRIETIES LATER
-    private TextView name, whatIs, fundName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,16 +57,8 @@ public class MainActivity extends AppCompatActivity {
        investFrag = new InvestimentFragment();
        contactFrag = new ContactFragment();
 
-       //SWITCH THIS DO VIEW HOLDER PROPRIETIES LATER
-        name = findViewById(R.id.name);
-        whatIs = findViewById(R.id.whatIs);
-        fundName = findViewById(R.id.fundName);
-
-
-       getGeneralContent();
 
        infoRecyclerView = findViewById(R.id.rc_info);
-       setupRecycler();
 
        switchFrag(investFrag,null);  //reference it
 
@@ -85,49 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 switchFrag(contactFrag, PageAnimation.SLIDE_RIGHT_TO_LEFT);
             }
         });
-    }
-
-    private void getGeneralContent(){
-        EndPoint endPoint = APIBase.retrofit.create(EndPoint.class);
-
-        final Call<Fund> fund = endPoint.getFund();
-
-        fund.enqueue(new Callback<Fund>() {
-            @Override
-            public void onResponse(Call<Fund> call, Response<Fund> response) {
-                Fund fundReturnContect = response.body();
-
-
-                //SWITCH THIS DO VIEW HOLDER PROPRIETIES LATER
-                name.setText(fundReturnContect.getScreen().getTitle());
-                whatIs.setText(fundReturnContect.getScreen().getTitle());
-                fundName.setText(fundReturnContect.getScreen().getTitle());
-
-            }
-
-            @Override
-            public void onFailure(Call<Fund> call, Throwable t) {
-
-            }
-        });
-    }
-
-    private List<Info> getInfo() {
-        List<Info> infos = new ArrayList<>();
-        infos.add(new Info());
-        return infos;
-    }
-
-        private void setupRecycler() {
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        infoRecyclerView.setLayoutManager(layoutManager);
-
-
-        santanderAdapter = new SantanderAdapter(getInfo());
-        infoRecyclerView.setAdapter(santanderAdapter);
-        infoRecyclerView.addItemDecoration(
-                new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     private void switchFrag(Fragment fragment, PageAnimation pageAnimation) {
