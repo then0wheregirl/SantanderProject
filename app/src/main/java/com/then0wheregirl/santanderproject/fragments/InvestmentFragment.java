@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.then0wheregirl.santanderproject.MainActivity;
 import com.then0wheregirl.santanderproject.R;
+import com.then0wheregirl.santanderproject.adapter.SantanderAdapter;
 import com.then0wheregirl.santanderproject.model.fund.Fund;
 import com.then0wheregirl.santanderproject.santanderAPI.APIBase;
 import com.then0wheregirl.santanderproject.santanderAPI.EndPoint;
@@ -20,12 +21,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class InvestimentFragment extends Fragment {
+public class InvestmentFragment extends Fragment {
 
 
     private TextView name, whatIs, fundName;
+    private SantanderAdapter sAdapter;
 
-    public InvestimentFragment() {
+    public InvestmentFragment() {
         // Required empty public constructor
 
 
