@@ -1,35 +1,44 @@
 package com.then0wheregirl.santanderproject.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.then0wheregirl.santanderproject.R;
 
 import com.then0wheregirl.santanderproject.model.fund.Info;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
-public class SantanderAdapter extends RecyclerView.Adapter<SantanderViewHolder> {
+public class SantanderAdapter extends RecyclerView.Adapter<SantanderAdapter.ViewHolder> {
 
-    private List<Info> infos;
+    Context aContext;
+    private List<Info> infoList;
 
-    public SantanderAdapter (List<Info> infos){
-        this.infos = infos;
+    public SantanderAdapter (Context aContext, List<Info> infoList){
+        this.aContext = aContext;
+        this.infoList = infoList;
     }
 
     @NonNull
     @Override
-    public SantanderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-        return new SantanderViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.info_list, parent, false));
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+        View view;
+        view = LayoutInflater.from( aContext ).inflate(R.layout.info_list, parent, false);
+        ViewHolder viewHolder = new ViewHolder( view );
+        return viewHolder;
     }
 
 
    @Override
-   public void onBindViewHolder(@NonNull SantanderViewHolder holder, final int position){
-        Info info = infos.get(position);
+   public void onBindViewHolder(ViewHolder holder, final int position){
+        Info info = infoList.get(position);
 
         holder.name.setText(info.getName());
         holder.data.setText(info.getData());
@@ -37,7 +46,19 @@ public class SantanderAdapter extends RecyclerView.Adapter<SantanderViewHolder> 
 
     @Override
     public int getItemCount(){
-        return infos != null ? infos.size() : 0;
+        return infoList.size();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+
+        TextView name, data;
+
+        public ViewHolder(View itemView){
+            super(itemView);
+            
+            name = itemView.findViewById( R.id.name );
+            data = itemView.findViewById( R.id.data );
+        }
     }
 
 }
