@@ -55,7 +55,7 @@ public class SantanderAdapter extends RecyclerView.Adapter<SantanderAdapter.View
 
         public ViewHolder(View itemView){
             super(itemView);
-            
+
             name = itemView.findViewById( R.id.name );
             data = itemView.findViewById( R.id.data );
         }
