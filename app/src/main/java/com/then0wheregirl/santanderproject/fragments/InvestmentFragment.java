@@ -19,6 +19,8 @@ import com.then0wheregirl.santanderproject.model.fund.Info;
 import com.then0wheregirl.santanderproject.santanderAPI.APIBase;
 import com.then0wheregirl.santanderproject.santanderAPI.EndPoint;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +32,7 @@ import retrofit2.Response;
 public class InvestmentFragment extends Fragment {
 
 
-    private TextView name, whatIs, fundName;
+    private TextView title, fundName, whatIs, definition, riskTitle;
     private SantanderAdapter sAdapter;
     public RecyclerView mRecycler;
     public List<Info> infoList;
@@ -48,9 +50,11 @@ public class InvestmentFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_investiment, container, false);
 
-        name = view.findViewById(R.id.name);
-        whatIs = view.findViewById(R.id.whatIs);
+        title = view.findViewById( R.id.title );
         fundName = view.findViewById(R.id.fundName);
+        whatIs = view.findViewById(R.id.whatIs);
+        definition = view.findViewById( R.id.definition );
+        riskTitle = view.findViewById( R.id.riskTitle );
 
         infoList = new ArrayList<>(  );
 
@@ -69,10 +73,11 @@ public class InvestmentFragment extends Fragment {
             public void onResponse(Call<Fund> call, Response<Fund> response) {
                 Fund fundReturnContect = response.body();
 
-
-                name.setText(fundReturnContect.getScreen().getTitle());
-                whatIs.setText(fundReturnContect.getScreen().getTitle());
+                title.setText( fundReturnContect.getScreen().getTitle() );
                 fundName.setText(fundReturnContect.getScreen().getTitle());
+                whatIs.setText(fundReturnContect.getScreen().getTitle());
+                definition.setText( fundReturnContect.getScreen().getTitle() );
+                riskTitle.setText( fundReturnContect.getScreen().getTitle() );
 
                 settingRecycler( fundReturnContect.getScreen().getInfo() );         }
 
