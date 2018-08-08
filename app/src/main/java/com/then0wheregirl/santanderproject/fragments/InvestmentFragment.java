@@ -9,11 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.then0wheregirl.santanderproject.MainActivity;
 import com.then0wheregirl.santanderproject.R;
-import com.then0wheregirl.santanderproject.adapter.SantanderAdapter;
+import com.then0wheregirl.santanderproject.adapter.SAdapterInfo;
 import com.then0wheregirl.santanderproject.model.fund.Fund;
 import com.then0wheregirl.santanderproject.model.fund.Info;
 import com.then0wheregirl.santanderproject.santanderAPI.APIBase;
@@ -32,8 +30,11 @@ import retrofit2.Response;
 public class InvestmentFragment extends Fragment {
 
 
-    private TextView title, fundName, whatIs, definition, riskTitle;
-    private SantanderAdapter sAdapter;
+    public TextView title, fundName, whatIs, definition, riskTitle, infoTitle;
+    public TextView fund_title, cdi_title, month, year, twelvemonths;
+    public TextView fund1, fund2, fund3, cdi1, cdi2, cdi3;
+    public View v_ir_1,  v_ir_2, v_ir_3,  v_ir_4,  v_ir_5;
+    public SAdapterInfo sAdapter;
     public RecyclerView mRecycler;
     public List<Info> infoList;
 
@@ -55,8 +56,29 @@ public class InvestmentFragment extends Fragment {
         whatIs = view.findViewById(R.id.whatIs);
         definition = view.findViewById( R.id.definition );
         riskTitle = view.findViewById( R.id.riskTitle );
+        infoTitle = view.findViewById( R.id.infoTitle );
+
+        fund_title = view.findViewById( R.id.fund_title);
+        cdi_title = view.findViewById( R.id.cdi_title);
+        month = view.findViewById( R.id.month);
+        year = view.findViewById( R.id.year);
+        twelvemonths = view.findViewById( R.id.twelvemonths);
+        fund1 = view.findViewById( R.id.fund1);
+        fund2 = view.findViewById( R.id.fund2);
+        fund3 = view.findViewById( R.id.fund3);
+        cdi1 = view.findViewById( R.id.cdi1);
+        cdi2 = view.findViewById( R.id.cdi2);
+        cdi3 = view.findViewById( R.id.cdi3);
+
+        v_ir_1 = view.findViewById( R.id.v_ir_1);
+        v_ir_2 = view.findViewById( R.id.v_ir_2);
+        v_ir_3 = view.findViewById( R.id.v_ir_3);
+        v_ir_4 = view.findViewById( R.id.v_ir_4);
+        v_ir_5 = view.findViewById( R.id.v_ir_5);
 
         infoList = new ArrayList<>(  );
+
+        mRecycler = view.findViewById( R.id.rc_info );
 
         getGeneralContent();
 
@@ -92,7 +114,7 @@ public class InvestmentFragment extends Fragment {
     private void settingRecycler(List<Info> infoList) {
         LinearLayoutManager layoutManager = new LinearLayoutManager( getContext() );
         mRecycler.setLayoutManager( layoutManager );
-        sAdapter = new SantanderAdapter( getContext(), infoList );
+        sAdapter = new SAdapterInfo( getContext(), infoList );
         mRecycler.setAdapter( sAdapter );
     }
 }

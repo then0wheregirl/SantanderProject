@@ -12,16 +12,14 @@ import com.then0wheregirl.santanderproject.R;
 
 import com.then0wheregirl.santanderproject.model.fund.Info;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
-public class SantanderAdapter extends RecyclerView.Adapter<SantanderAdapter.ViewHolder> {
+public class SAdapterInfo extends RecyclerView.Adapter<SAdapterInfo.ViewHolder> {
 
     Context aContext;
     private List<Info> infoList;
 
-    public SantanderAdapter (Context aContext, List<Info> infoList){
+    public SAdapterInfo(Context aContext, List<Info> infoList){
         this.aContext = aContext;
         this.infoList = infoList;
     }
