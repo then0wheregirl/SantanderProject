@@ -100,8 +100,20 @@ public class InvestmentFragment extends Fragment {
                 whatIs.setText(fundReturnContect.getScreen().getTitle());
                 definition.setText( fundReturnContect.getScreen().getTitle() );
                 riskTitle.setText( fundReturnContect.getScreen().getTitle() );
+                infoTitle.setText( fundReturnContect.getScreen().getTitle() );
+
+                fund1.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
+                fund2.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
+                fund3.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
+                cdi1.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
+                cdi2.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
+                cdi3.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
+
 
                 settingRecycler( fundReturnContect.getScreen().getInfo() );         }
+
+                //falta fazer o risk measure
+
 
             @Override
             public void onFailure(Call<Fund> call, Throwable response) {
