@@ -3,7 +3,7 @@ package com.then0wheregirl.santanderproject.model.fund;
 import com.google.gson.annotations.SerializedName;
 
 public class Month {
-
+    @SerializedName("fund")
     public double fund;
 
     public double getFund() {

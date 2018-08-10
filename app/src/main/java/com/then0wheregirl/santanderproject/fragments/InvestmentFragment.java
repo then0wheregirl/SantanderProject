@@ -115,7 +115,7 @@ public class InvestmentFragment extends Fragment {
 
 
                 settingRecycler_i( fundReturnContect.getScreen().getInfo() );
-                settingRecycler_di(fundReturnContect.getScreen().getDownInfo());
+                settingRecycler_di( fundReturnContect.getScreen().getDownInfo() );
             }
 
                 //falta fazer o risk measure

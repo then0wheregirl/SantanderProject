@@ -188,7 +188,7 @@
                 android:layout_margin="30dp">
                 <TableRow>
                     <TextView android:id="@+id/fund_title"
-                        android:text="*"
+                        android:text="Fundo"
                         android:layout_column="1"/>
                     <TextView android:id="@+id/cdi_title"
                         android:text="CDI"/>
@@ -199,7 +199,7 @@
                     <TextView
                         android:id="@+id/month"
                         android:layout_width="170dp"
-                        android:text="*" />
+                        android:text="No mês" />
                     <TextView android:id="@+id/fund1"
                         android:text="*" />
                     <TextView android:id="@+id/cdi1"
@@ -211,7 +211,7 @@
                     <TextView
                         android:id="@+id/year"
                         android:layout_width="170dp"
-                        android:text="*" />
+                        android:text="No ano" />
                     <TextView android:id="@+id/fund2"
                         android:text="*" />
                     <TextView android:id="@+id/cdi2"
@@ -222,7 +222,7 @@
                     <TextView
                         android:id="@+id/twelvemonths"
                         android:layout_width="170dp"
-                        android:text="12 months" />
+                        android:text="12 meses" />
                     <TextView android:id="@+id/fund3"
                         android:text="*" />
                     <TextView android:id="@+id/cdi3"
