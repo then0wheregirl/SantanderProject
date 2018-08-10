@@ -37,7 +37,6 @@
 
         </android.support.v7.widget.Toolbar>
 
-
         <LinearLayout
             android:id="@+id/ll_InvestFund"
             android:layout_width="match_parent"
@@ -67,8 +66,8 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="*
-"
+                android:textAlignment="center"
+                android:text="*"
                 android:textSize="25dp" />
 
             <View
@@ -109,7 +108,7 @@
             android:id="@+id/ll_RiskMeasure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="22dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,7 +116,7 @@
 
             <View
                 android:id="@+id/v_ir_1"
-                android:layout_width="60dp"
+                android:layout_width="50dp"
                 android:layout_height="7dp"
                 android:layout_margin="0.5dp"
                 android:background="@color/colorGreenLight"
@@ -125,7 +124,7 @@
 
             <View
                 android:id="@+id/v_ir_2"
-                android:layout_width="60dp"
+                android:layout_width="50dp"
                 android:layout_height="7dp"
                 android:layout_margin="0.5dp"
                 android:background="@color/colorGreenDark"
@@ -133,7 +132,7 @@
 
             <View
                 android:id="@+id/v_ir_3"
-                android:layout_width="60dp"
+                android:layout_width="50dp"
                 android:layout_height="7dp"
                 android:layout_margin="0.3dp"
                 android:background="@color/colorYellow"
@@ -141,7 +140,7 @@
 
             <View
                 android:id="@+id/v_ir_4"
-                android:layout_width="60dp"
+                android:layout_width="50dp"
                 android:layout_height="7dp"
                 android:layout_margin="0.3dp"
                 android:background="@color/colorOrange"
@@ -149,7 +148,7 @@
 
             <View
                 android:id="@+id/v_ir_5"
-                android:layout_width="60dp"
+                android:layout_width="50dp"
                 android:layout_height="7dp"
                 android:layout_margin="0.3dp"
                 android:background="@color/colorRed"
@@ -185,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:stretchColumns="*"
                 android:shrinkColumns="*"
-                android:layout_margin="30dp">
+                android:layout_margin="25dp">
                 <TableRow>
                     <TextView android:id="@+id/fund_title"
                         android:text="Fundo"
