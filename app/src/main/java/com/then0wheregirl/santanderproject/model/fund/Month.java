@@ -4,24 +4,26 @@ import com.google.gson.annotations.SerializedName;
 
 public class Month {
 
-    public int fund;
+    public double fund;
 
-    public int getFund() {
+    public double getFund() {
         return fund;
     }
 
-    public void setFund(int fund){
+    public void setFund(double fund){
         this.fund = fund;
     }
 
-    @SerializedName("CDI")
-    public int cdi;
 
-    public int getCdi(){
+
+    @SerializedName("CDI")
+    public double cdi;
+
+    public double getCdi(){
         return cdi;
     }
 
-    public void setCdi(int cdi){
+    public void setCdi(double cdi){
         this.cdi = cdi;
     }
 }

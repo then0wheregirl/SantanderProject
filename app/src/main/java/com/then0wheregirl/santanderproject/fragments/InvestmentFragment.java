@@ -11,13 +11,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.then0wheregirl.santanderproject.R;
+import com.then0wheregirl.santanderproject.adapter.SAdapterDownInfo;
 import com.then0wheregirl.santanderproject.adapter.SAdapterInfo;
+import com.then0wheregirl.santanderproject.model.fund.DownInfo;
 import com.then0wheregirl.santanderproject.model.fund.Fund;
 import com.then0wheregirl.santanderproject.model.fund.Info;
 import com.then0wheregirl.santanderproject.santanderAPI.APIBase;
 import com.then0wheregirl.santanderproject.santanderAPI.EndPoint;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +34,12 @@ public class InvestmentFragment extends Fragment {
     public TextView fund_title, cdi_title, month, year, twelvemonths;
     public TextView fund1, fund2, fund3, cdi1, cdi2, cdi3;
     public View v_ir_1,  v_ir_2, v_ir_3,  v_ir_4,  v_ir_5;
-    public SAdapterInfo sAdapter;
+    public SAdapterInfo iAdapter;
     public RecyclerView mRecycler;
     public List<Info> infoList;
+    public SAdapterDownInfo diAdapter;
+    public RecyclerView nRecycler;
+    public List<DownInfo> downInfoList;
 
     public InvestmentFragment() {
         // Required empty public constructor
@@ -77,8 +80,9 @@ public class InvestmentFragment extends Fragment {
         v_ir_5 = view.findViewById( R.id.v_ir_5);
 
         infoList = new ArrayList<>(  );
-
+        downInfoList = new ArrayList<>(  );
         mRecycler = view.findViewById( R.id.rc_info );
+        nRecycler = view.findViewById( R.id.rc_downinfo );
 
         getGeneralContent();
 
@@ -96,21 +100,23 @@ public class InvestmentFragment extends Fragment {
                 Fund fundReturnContect = response.body();
 
                 title.setText( fundReturnContect.getScreen().getTitle() );
-                fundName.setText(fundReturnContect.getScreen().getTitle());
-                whatIs.setText(fundReturnContect.getScreen().getTitle());
-                definition.setText( fundReturnContect.getScreen().getTitle() );
-                riskTitle.setText( fundReturnContect.getScreen().getTitle() );
-                infoTitle.setText( fundReturnContect.getScreen().getTitle() );
+                fundName.setText(fundReturnContect.getScreen().getFundName());
+                whatIs.setText(fundReturnContect.getScreen().getWhatIs());
+                definition.setText( fundReturnContect.getScreen().getDefinition() );
+                riskTitle.setText( fundReturnContect.getScreen().getRiskTitle() );
+                infoTitle.setText( fundReturnContect.getScreen().getInfoTitle() );
 
                 fund1.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
-                fund2.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
-                fund3.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
-                cdi1.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
-                cdi2.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
-                cdi3.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getFund() ) );
+                fund2.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getYear().getFund() ) );
+                fund3.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getTwelveMonths().getFund() ) );
+                cdi1.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getMonth().getCdi() ) );
+                cdi2.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getYear().getCdi() ) );
+                cdi3.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getTwelveMonths().getCdi() ) );
 
 
-                settingRecycler( fundReturnContect.getScreen().getInfo() );         }
+                settingRecycler_i( fundReturnContect.getScreen().getInfo() );
+                settingRecycler_di(fundReturnContect.getScreen().getDownInfo());
+            }
 
                 //falta fazer o risk measure
 
@@ -123,10 +129,17 @@ public class InvestmentFragment extends Fragment {
         });
     }
 
-    private void settingRecycler(List<Info> infoList) {
+    private void settingRecycler_i(List<Info> infoList) {
         LinearLayoutManager layoutManager = new LinearLayoutManager( getContext() );
         mRecycler.setLayoutManager( layoutManager );
-        sAdapter = new SAdapterInfo( getContext(), infoList );
-        mRecycler.setAdapter( sAdapter );
+        iAdapter = new SAdapterInfo( getContext(), infoList );
+        mRecycler.setAdapter( iAdapter );
+    }
+
+    private void settingRecycler_di(List<DownInfo> downInfoList) {
+        LinearLayoutManager layoutManager = new LinearLayoutManager( getContext() );
+        nRecycler.setLayoutManager( layoutManager );
+        diAdapter = new SAdapterDownInfo( getContext(), downInfoList );
+        nRecycler.setAdapter( diAdapter );
     }
 }

@@ -16,7 +16,7 @@ import java.util.List;
 
 public class SAdapterInfo extends RecyclerView.Adapter<SAdapterInfo.ViewHolder> {
 
-    Context aContext;
+    private Context aContext;
     private List<Info> infoList;
 
     public SAdapterInfo(Context aContext, List<Info> infoList){
