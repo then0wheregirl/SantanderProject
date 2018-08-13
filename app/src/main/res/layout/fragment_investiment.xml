@@ -74,7 +74,7 @@
                 android:layout_width="350dp"
                 android:layout_height="2dp"
                 android:layout_gravity="center"
-                android:layout_margin="8dp"
+                android:layout_margin="15dp"
                 android:background="@color/colorGrey" />
 
             <TextView
@@ -116,40 +116,40 @@
 
             <View
                 android:id="@+id/v_ir_1"
-                android:layout_width="50dp"
-                android:layout_height="7dp"
+                android:layout_width="58dp"
+                android:layout_height="6dp"
                 android:layout_margin="0.5dp"
                 android:background="@color/colorGreenLight"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <View
                 android:id="@+id/v_ir_2"
-                android:layout_width="50dp"
-                android:layout_height="7dp"
+                android:layout_width="58dp"
+                android:layout_height="6dp"
                 android:layout_margin="0.5dp"
                 android:background="@color/colorGreenDark"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <View
                 android:id="@+id/v_ir_3"
-                android:layout_width="50dp"
-                android:layout_height="7dp"
+                android:layout_width="58dp"
+                android:layout_height="6dp"
                 android:layout_margin="0.3dp"
                 android:background="@color/colorYellow"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <View
                 android:id="@+id/v_ir_4"
-                android:layout_width="50dp"
-                android:layout_height="7dp"
+                android:layout_width="58dp"
+                android:layout_height="6dp"
                 android:layout_margin="0.3dp"
                 android:background="@color/colorOrange"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <View
                 android:id="@+id/v_ir_5"
-                android:layout_width="50dp"
-                android:layout_height="7dp"
+                android:layout_width="58dp"
+                android:layout_height="6dp"
                 android:layout_margin="0.3dp"
                 android:background="@color/colorRed"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -177,6 +177,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:layout_margin="8dp"
                 android:text="*" />
 
             <TableLayout
@@ -184,8 +185,10 @@
                 android:layout_height="wrap_content"
                 android:stretchColumns="*"
                 android:shrinkColumns="*"
-                android:layout_margin="25dp">
-                <TableRow>
+                android:layout_margin="15dp">
+                <TableRow
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
                     <TextView android:id="@+id/fund_title"
                         android:text="Fundo"
                         android:layout_column="1"/>
@@ -193,7 +196,9 @@
                         android:text="CDI"/>
                 </TableRow>
 
-                <TableRow>
+                <TableRow
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:id="@+id/month"
@@ -205,7 +210,9 @@
                         android:text="*"/>
                 </TableRow>
 
-                <TableRow>
+                <TableRow
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
 
                     <TextView
                         android:id="@+id/year"
@@ -216,7 +223,8 @@
                     <TextView android:id="@+id/cdi2"
                         android:text="*"/>
                 </TableRow>
-                <TableRow>
+                <TableRow
+                    android:layout_marginTop="5dp">
 
                     <TextView
                         android:id="@+id/twelvemonths"
@@ -228,6 +236,13 @@
                         android:text="*"/>
                 </TableRow>
             </TableLayout>
+
+            <View
+                android:layout_width="350dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:background="@color/colorGrey" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rc_info"
