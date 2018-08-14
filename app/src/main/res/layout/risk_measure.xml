@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="18dp"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <View
+        android:layout_width="12dp"
+        android:layout_height="8dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"
+        android:visibility="invisible"
+        android:background="@drawable/riskarrow_icon" />
+    <View
+        android:id="@+id/v_ir_1"
+        android:layout_width="58dp"
+        android:layout_height="6dp"
+        android:layout_margin="0.5dp"
+        android:background="@color/colorGreenLight" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="12dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:visibility="invisible"
+            android:background="@drawable/riskarrow_icon" />
+        <View
+            android:id="@+id/v_ir_2"
+            android:layout_width="58dp"
+            android:layout_height="6dp"
+            android:layout_margin="0.5dp"
+            android:background="@color/colorGreenDark" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="12dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:visibility="invisible"
+            android:background="@drawable/riskarrow_icon" />
+        <View
+            android:id="@+id/v_ir_3"
+            android:layout_width="58dp"
+            android:layout_height="6dp"
+            android:layout_margin="0.5dp"
+            android:background="@color/colorYellow" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="12dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:visibility="invisible"
+            android:background="@drawable/riskarrow_icon" />
+        <View
+            android:id="@+id/v_ir_4"
+            android:layout_width="58dp"
+            android:layout_height="6dp"
+            android:layout_margin="0.5dp"
+            android:background="@color/colorOrange" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="12dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:visibility="invisible"
+            android:background="@drawable/riskarrow_icon" />
+        <View
+            android:id="@+id/v_ir_5"
+            android:layout_width="58dp"
+            android:layout_height="6dp"
+            android:layout_margin="0.5dp"
+            android:background="@color/colorRed" />
+    </LinearLayout>
+
+</LinearLayout>

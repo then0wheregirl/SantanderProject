@@ -16,6 +16,7 @@ import com.then0wheregirl.santanderproject.adapter.SAdapterInfo;
 import com.then0wheregirl.santanderproject.model.fund.DownInfo;
 import com.then0wheregirl.santanderproject.model.fund.Fund;
 import com.then0wheregirl.santanderproject.model.fund.Info;
+import com.then0wheregirl.santanderproject.model.fund.Risk;
 import com.then0wheregirl.santanderproject.santanderAPI.APIBase;
 import com.then0wheregirl.santanderproject.santanderAPI.EndPoint;
 
@@ -25,6 +26,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 
 public class InvestmentFragment extends Fragment {
@@ -114,11 +116,39 @@ public class InvestmentFragment extends Fragment {
                 cdi3.setText( String.valueOf( fundReturnContect.getScreen().getMoreInfo().getTwelveMonths().getCdi() ) );
 
 
+                switch(fundReturnContect.getScreen().getRisk()){
+
+                    case 1:
+                        ViewGroup.LayoutParams layoutParams = v_ir_1.getLayoutParams();
+                        layoutParams.height = 30;
+                        v_ir_1.setLayoutParams(layoutParams);
+                        break;
+                    case 2:
+                        ViewGroup.LayoutParams layoutParams2 = v_ir_2.getLayoutParams();
+                        layoutParams2.height = 30;
+                        v_ir_2.setLayoutParams(layoutParams2);
+                        break;
+                    case 3:
+                        ViewGroup.LayoutParams layoutParams3 = v_ir_3.getLayoutParams();
+                        layoutParams3.height = 30;
+                        v_ir_3.setLayoutParams(layoutParams3);
+                        break;
+                    case 4:
+                        ViewGroup.LayoutParams layoutParams4 = v_ir_4.getLayoutParams();
+                        layoutParams4.height = 30;
+                        v_ir_4.setLayoutParams(layoutParams4);
+                        break;
+                    case 5:
+                        ViewGroup.LayoutParams layoutParams5 = v_ir_5.getLayoutParams();
+                        layoutParams5.height = 30;
+                        v_ir_5.setLayoutParams(layoutParams5);
+                        break;
+                }
+
                 settingRecycler_i( fundReturnContect.getScreen().getInfo() );
                 settingRecycler_di( fundReturnContect.getScreen().getDownInfo() );
-            }
 
-                //falta fazer o risk measure
+            }
 
 
             @Override
